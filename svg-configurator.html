@@ -11,9 +11,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #f8f9fa;
-      padding: 2rem 0;
     }
-    
     
     .config-panel {
       background: white;
@@ -468,7 +466,7 @@
       navigator.clipboard.writeText(text).then(() => {
         // Brief visual feedback
         const originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
         setTimeout(() => { btn.innerHTML = originalHTML; }, 1500);
       });
     }
@@ -526,7 +524,7 @@
       swatches.forEach((swatch, index) => {
         const item = document.createElement('div');
         item.className = 'preset-item has-delete';
-        item.title = `${swatch.left} / ${swatch.right}`;
+        item.title = `${swatch.left} / ${swatch.right} / ${swatch.bg}`;
         item.onclick = (e) => {
           if (!e.target.classList.contains('delete-btn')) {
             colorLeft.value = swatch.left;
@@ -571,6 +569,7 @@
     
     function saveSwatch() {
       swatches.push({
+		label: `${colorLeft.value.toUpperCase()} / ${colorRight.value.toUpperCase()} / ${colorBg.value.toUpperCase()}`,
         left: colorLeft.value.toUpperCase(),
         right: colorRight.value.toUpperCase(),
         bg: colorBg.value.toUpperCase()
