@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coinflipper Logo SVG Variants</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      padding: 2rem 0;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Background variations */
+    body.bg-light { background: #f8f9fa; }
+    body.bg-light-gray { background: #b0b8c0; }
+    body.bg-color-1 { background: #3d5a80; } /* Steel blue */
+    body.bg-color-2 { background: #9b6b4a; } /* Warm bronze */
+    body.bg-dark { background: #1a1a2e; }
+    
+    .bg-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #495057;
+      color: white;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.2s;
+    }
+    .bg-toggle:hover { background: #343a40; }
+    
+    h1 { text-align: center; margin-bottom: 0.5rem; }
+    .subtitle { text-align: center; color: #6c757d; margin-bottom: 2rem; }
+    
+    h2 {
+      font-size: 1.25rem;
+      color: #495057;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    #variations {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    
+    .logo-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .logo-card svg {
+      width: 100px;
+      height: 115px;
+      margin-bottom: 0.75rem;
+    }
+    
+    .logo-card .card-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .logo-card .card-variant {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 0.25rem;
+    }
+    
+    .logo-card .card-desc {
+      font-size: 0.75rem;
+      color: #666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .logo-card .navbar-mini {
+      margin-top: 0.75rem;
+      padding: 0.5rem;
+      background: #f1f3f5;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-card .navbar-mini svg {
+      width: 22px;
+      height: 25px;
+      margin: 0;
+    }
+    
+    .logo-card .navbar-mini span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #495057;
+    }
+
+    /* =========================
+       COLOR VARIATIONS (CSS)
+       ========================= */
+    
+    /* Original: Navy Blue + Red */
+    .original .left-seg { fill: #26337A; }
+    .original .right-seg { fill: #FF0000; }
+    .original .bg-rect { fill: #FFFFFF; }
+
+    /* Pick-a-Hit: Burgundy + Burnt Orange */
+    .pick-a-hit .left-seg { fill: #8B4513; }
+    .pick-a-hit .right-seg { fill: #D2691E; }
+    .pick-a-hit .bg-rect { fill: #FFFDE7; }
+
+    /* SubContest: Cowboys (Navy + Silver) */
+    .subcontest .left-seg { fill: #004488; }
+    .subcontest .right-seg { fill: #A5ACAF; }
+    .subcontest .bg-rect { fill: #FFFFFF; }
+
+    /* Summer Classics: Mowed Grass */
+    .summer-classics .left-seg { fill: #228B22; }
+    .summer-classics .right-seg { fill: #90EE90; }
+    .summer-classics .bg-rect { fill: #FFFFFF; }
+
+    /* The Untitled: Light/Silver Bleak */
+    .the-untitled .left-seg { fill: #606060; }
+    .the-untitled .right-seg { fill: #B0B0B0; }
+    .the-untitled .bg-rect { fill: #FFFFFF; }
+
+    /* ===== PICK-A-HIT ALTERNATIVES ===== */
+    
+    /* Option 1: Deep Burgundy + Bright Orange */
+    .pick-a-hit-1 .left-seg { fill: #722F37; }
+    .pick-a-hit-1 .right-seg { fill: #FF6B35; }
+    .pick-a-hit-1 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 2: Dark Brown + Pumpkin */
+    .pick-a-hit-2 .left-seg { fill: #5D4037; }
+    .pick-a-hit-2 .right-seg { fill: #E64A19; }
+    .pick-a-hit-2 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 3: Maroon + Golden Yellow */
+    .pick-a-hit-3 .left-seg { fill: #4A2C2A; }
+    .pick-a-hit-3 .right-seg { fill: #FF5722; }
+    .pick-a-hit-3 .bg-rect { fill: #FFFFFF; }
+
+    /* ===== SUBCONTEST ALTERNATIVES ===== */
+    
+    /* Chargers: Powder Blue + Gold */
+    .subcontest-chargers .left-seg { fill: #0080C6; }
+    .subcontest-chargers .right-seg { fill: #FFC20E; }
+    .subcontest-chargers .bg-rect { fill: #FFFFFF; }
+
+    /* Option 1: Purple & Gold */
+    .subcontest-1 .left-seg { fill: #4B0082; }
+    .subcontest-1 .right-seg { fill: #FFD700; }
+    .subcontest-1 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 2: Teal & Orange */
+    .subcontest-2 .left-seg { fill: #008080; }
+    .subcontest-2 .right-seg { fill: #FF6347; }
+    .subcontest-2 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 3: Crimson & Navy */
+    .subcontest-3 .left-seg { fill: #8B0000; }
+    .subcontest-3 .right-seg { fill: #000080; }
+    .subcontest-3 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 4: Black & Gold */
+    .subcontest-4 .left-seg { fill: #1A1A1A; }
+    .subcontest-4 .right-seg { fill: #CFB53B; }
+    .subcontest-4 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 5: Gridiron (Forest & Silver) */
+    .subcontest-5 .left-seg { fill: #013220; }
+    .subcontest-5 .right-seg { fill: #A8A9AD; }
+    .subcontest-5 .bg-rect { fill: #FFFFFF; }
+
+    /* ===== SUMMER CLASSICS ALTERNATIVES ===== */
+    
+    /* Grass & Dirt */
+    .summer-dirt .left-seg { fill: #228B22; }
+    .summer-dirt .right-seg { fill: #8B4513; }
+    .summer-dirt .bg-rect { fill: #FFFDE7; }
+
+    /* Miami Vice */
+    .summer-miami .left-seg { fill: #FF6B9D; }
+    .summer-miami .right-seg { fill: #00D4AA; }
+    .summer-miami .bg-rect { fill: #FFFFFF; }
+
+    /* ===== THE UNTITLED ALTERNATIVES ===== */
+    
+    /* Option 1: Dark Grays */
+    .the-untitled-1 .left-seg { fill: #1A1A1A; }
+    .the-untitled-1 .right-seg { fill: #6B6B6B; }
+    .the-untitled-1 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 2: Lighter */
+    .the-untitled-2 .left-seg { fill: #3A3A3A; }
+    .the-untitled-2 .right-seg { fill: #888888; }
+    .the-untitled-2 .bg-rect { fill: #FFFFFF; }
+
+    /* Option 3: Medium */
+    .the-untitled-3 .left-seg { fill: #505050; }
+    .the-untitled-3 .right-seg { fill: #9E9E9E; }
+    .the-untitled-3 .bg-rect { fill: #FFFFFF; }
+  </style>
+</head>
+<body class="bg-light">
+  <button class="bg-toggle" onclick="cycleBackground()">Background: Light</button>
+
+  <!-- Hidden SVG templates -->
+  <div style="display: none;">
+    <!-- White Fill version (has background rect) -->
+    <svg id="tpl-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
+      <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6"/>
+      <path class="left-seg" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
+      <path class="right-seg" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
+    </svg>
+
+  </div>
+
+  <div class="container">
+    <h1>Coinflipper SVG Logo Variants</h1>
+    <p class="subtitle">Vector originals with CSS color overrides</p>
+
+    <!-- Variations will be inserted here by script -->
+    <div id="variations"></div>
+  </div>
+
+  <script>
+    // Background cycling
+    const backgrounds = [
+      { class: 'bg-light', label: 'Light' },
+      { class: 'bg-light-gray', label: 'Light Gray' },
+      { class: 'bg-color-1', label: 'Steel Blue' },
+      { class: 'bg-color-2', label: 'Bronze' },
+      { class: 'bg-dark', label: 'Dark' }
+    ];
+    let bgIndex = 0;
+    
+    function cycleBackground() {
+      bgIndex = (bgIndex + 1) % backgrounds.length;
+      const bg = backgrounds[bgIndex];
+      document.body.className = bg.class;
+      document.querySelector('.bg-toggle').textContent = 'Background: ' + bg.label;
+    }
+
+    const variations = [
+      // Original
+      { id: 'original', app: 'Original', variant: '', label: 'Coinflipper', desc: 'Navy Blue + Red' },
+      
+      // Pick-a-Hit
+      { id: 'pick-a-hit', app: '🍂 Pick-a-Hit', variant: 'Primary', label: 'Pick-a-Hit', desc: 'Burgundy + Burnt Orange' },
+      { id: 'pick-a-hit-1', app: '🍂 Pick-a-Hit', variant: 'Option 1', label: 'Pick-a-Hit', desc: 'Deep Burgundy + Bright Orange' },
+      { id: 'pick-a-hit-2', app: '🍂 Pick-a-Hit', variant: 'Option 2', label: 'Pick-a-Hit', desc: 'Dark Brown + Pumpkin' },
+      { id: 'pick-a-hit-3', app: '🍂 Pick-a-Hit', variant: 'Option 3', label: 'Pick-a-Hit', desc: 'Maroon + Golden Yellow' },
+      
+      // SubContest
+      { id: 'subcontest', app: '🏈 SubContest', variant: 'Cowboys', label: 'SubContest', desc: 'Navy + Silver' },
+      { id: 'subcontest-chargers', app: '🏈 SubContest', variant: 'Chargers', label: 'SubContest', desc: 'Powder Blue + Gold' },
+      { id: 'subcontest-1', app: '🏈 SubContest', variant: 'Option 1', label: 'SubContest', desc: 'Purple & Gold' },
+      { id: 'subcontest-2', app: '🏈 SubContest', variant: 'Option 2', label: 'SubContest', desc: 'Teal & Orange' },
+      { id: 'subcontest-3', app: '🏈 SubContest', variant: 'Option 3', label: 'SubContest', desc: 'Crimson & Navy' },
+      { id: 'subcontest-4', app: '🏈 SubContest', variant: 'Option 4', label: 'SubContest', desc: 'Black & Gold' },
+      { id: 'subcontest-5', app: '🏈 SubContest', variant: 'Option 5', label: 'SubContest', desc: 'Gridiron (Forest & Silver)' },
+      
+      // Summer Classics
+      { id: 'summer-classics', app: '☀️ Summer Classics', variant: 'Mowed Grass', label: 'Summer Classics', desc: 'Forest + Light Green' },
+      { id: 'summer-dirt', app: '☀️ Summer Classics', variant: 'Grass & Dirt', label: 'Summer Classics', desc: 'Forest Green + Saddle Brown' },
+      { id: 'summer-miami', app: '☀️ Summer Classics', variant: 'Miami Vice', label: 'Summer Classics', desc: 'Hot Pink + Aqua' },
+      
+      // The Untitled
+      { id: 'the-untitled', app: '❄️ The Untitled', variant: 'Primary', label: 'The Untitled', desc: 'Light/Silver Bleak' },
+      { id: 'the-untitled-1', app: '❄️ The Untitled', variant: 'Option 1', label: 'The Untitled', desc: 'Dark Grays' },
+      { id: 'the-untitled-2', app: '❄️ The Untitled', variant: 'Option 2', label: 'The Untitled', desc: 'Lighter Grays' },
+      { id: 'the-untitled-3', app: '❄️ The Untitled', variant: 'Option 3', label: 'The Untitled', desc: 'Medium Grays' }
+    ];
+
+    const tplFill = document.getElementById('tpl-fill');
+    const container = document.getElementById('variations');
+
+    variations.forEach(v => {
+      const card = document.createElement('div');
+      card.className = 'logo-card ' + v.id;
+      card.innerHTML = `
+        <div class="svg-main"></div>
+        <div class="card-title">${v.app}</div>
+        <div class="card-variant">${v.variant}</div>
+        <div class="card-desc">${v.desc}</div>
+        <div class="navbar-mini">
+          <span class="nav-svg"></span>
+          <span>${v.label}</span>
+        </div>
+      `;
+
+      // Clone and insert large SVG
+      const fillLarge = tplFill.cloneNode(true);
+      fillLarge.removeAttribute('id');
+      card.querySelector('.svg-main').appendChild(fillLarge);
+
+      // Clone and insert navbar SVG
+      const fillNav = tplFill.cloneNode(true);
+      fillNav.removeAttribute('id');
+      card.querySelector('.nav-svg').appendChild(fillNav);
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
