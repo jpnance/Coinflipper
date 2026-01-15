@@ -12,7 +12,7 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #f8f9fa;
     }
-    
+
     .config-panel {
       background: white;
       border-radius: 8px;
@@ -20,14 +20,14 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       margin-bottom: 2rem;
     }
-    
+
     .color-row {
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
     }
     .color-row:last-child { margin-bottom: 0; }
-    
+
     .color-row label {
       width: 140px;
       font-weight: 500;
@@ -36,7 +36,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
+
     .color-row input[type="color"] {
       width: 60px;
       height: 36px;
@@ -45,7 +45,7 @@
       border-radius: 4px;
       cursor: pointer;
     }
-    
+
     .color-row .hex-input {
       margin-left: auto;
       font-family: monospace;
@@ -61,7 +61,7 @@
       border-color: #80bdff;
       box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
     }
-    
+
     .color-actions {
       display: flex;
       justify-content: center;
@@ -83,7 +83,7 @@
     .color-actions .btn span {
       font-size: 0.65rem;
     }
-    
+
     .preview-section {
       background: white;
       border-radius: 8px;
@@ -91,25 +91,24 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       margin-bottom: 2rem;
     }
-    
-    
+
     .preview-row {
       display: flex;
       align-items: center;
       gap: 2rem;
       flex-wrap: wrap;
     }
-    
+
     .preview-item {
       text-align: center;
     }
-    
+
     .preview-item .size-label {
       font-size: 0.75rem;
       color: #6c757d;
       margin-top: 0.5rem;
     }
-    
+
     .preview-section svg.clickable {
       cursor: pointer;
       transition: transform 0.15s;
@@ -117,18 +116,18 @@
     .preview-section svg.clickable:hover {
       transform: scale(1.02);
     }
-    
+
     /* Logo sizes */
     .logo-xl { width: 251px; height: 289px; }
     .logo-l { width: 87px; height: 100px; border-radius: 5px; }
     .logo-m { width: 26px; height: 30px; border-radius: 3px; }
     .logo-s { width: 16px; height: 18px; border-radius: 2px; }
-    
+
     /* Navbar preview */
     .navbar-demo {
       margin-top: 0.5rem;
     }
-    
+
     .preview-footer {
       display: flex;
       gap: 0.75rem;
@@ -140,13 +139,13 @@
       width: auto;
       border-radius: 3px;
     }
-    
+
     .btn-row {
       margin-top: 1.5rem;
       display: flex;
       gap: 1rem;
     }
-    
+
     /* Preset grid */
     .preset-grid {
       display: grid;
@@ -170,7 +169,7 @@
       display: block;
       border-radius: 2px;
     }
-    
+
     /* Swatch delete button */
     .preset-item .delete-btn {
       position: absolute;
@@ -197,7 +196,7 @@
     .preset-item.has-delete {
       position: relative;
     }
-    
+
     /* Add swatch button styled as a grid item */
     .add-swatch-btn {
       aspect-ratio: 251 / 289;
@@ -216,7 +215,7 @@
       border-color: #007bff;
       color: #007bff;
     }
-    
+
     /* Config panel headers (match preview section) */
     .config-heading {
       font-size: 1rem;
@@ -240,28 +239,93 @@
 <body>
   <div class="container py-4">
     <div class="row">
+      <div class="col-md-8">
+        <div class="preview-section">
+          <div class="navbar-demo mb-4">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+              <a class="navbar-brand" href="#" onclick="return false;">
+                <svg class="logo mr-2" id="logo-navbar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
+                  <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
+                  <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
+                  <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
+                </svg>
+                <strong class="align-middle" contenteditable="true" spellcheck="false">Coinflipper</strong>
+              </a>
+            </nav>
+          </div>
+
+          <div class="preview-row">
+            <div class="preview-item">
+              <svg class="logo-xl clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
+                <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
+                <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
+                <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
+              </svg>
+              <div class="size-label">Extra Large (251×289)</div>
+            </div>
+
+            <div class="preview-item">
+              <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <div>
+                  <svg class="logo-l clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
+                    <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
+                    <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
+                    <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
+                  </svg>
+                  <div class="size-label">Large (87×100)</div>
+                </div>
+
+                <div>
+                  <svg class="logo-m clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
+                    <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
+                    <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
+                    <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
+                  </svg>
+                  <div class="size-label">Medium (26×30)</div>
+                </div>
+
+                <div>
+                  <svg class="logo-s clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
+                    <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
+                    <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
+                    <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
+                  </svg>
+                  <div class="size-label">Small (16×18)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-footer mt-4">
+            <button class="btn btn-primary btn-sm" onclick="saveSVG()">
+              <i class="fa-solid fa-download"></i> Save SVG
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div class="col-md-4">
         <div class="config-panel">
           <h3 class="config-heading">Colors</h3>
-          
+
           <div class="color-row">
             <label for="color-left">Left Segment</label>
             <input type="color" id="color-left" value="#26337A">
             <input type="text" class="hex-input" id="hex-left" value="#26337A" maxlength="7">
           </div>
-          
+
           <div class="color-row">
             <label for="color-right">Right Segment</label>
             <input type="color" id="color-right" value="#FF0000">
             <input type="text" class="hex-input" id="hex-right" value="#FF0000" maxlength="7">
           </div>
-          
+
           <div class="color-row">
             <label for="color-bg">Background</label>
             <input type="color" id="color-bg" value="#FFFFFF">
             <input type="text" class="hex-input" id="hex-bg" value="#FFFFFF" maxlength="7">
           </div>
-          
+
           <div class="color-actions mt-3">
             <button class="btn btn-outline-secondary btn-sm" onclick="swapSegments()" title="Flip left and right">
               <i class="fa-solid fa-arrow-right-arrow-left"></i>
@@ -280,78 +344,13 @@
               <span>Import</span>
             </button>
           </div>
-          
+
           <h3 class="config-heading-row">Presets</h3>
           <div id="preset-container" class="preset-grid"></div>
-          
+
           <h3 class="config-heading-row">Swatches</h3>
           <div id="swatch-container" class="preset-grid"></div>
-          
-        </div>
-      </div>
-      
-      <div class="col-md-8">
-        <div class="preview-section">
-          <div class="navbar-demo mb-4">
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
-              <a class="navbar-brand" href="#" onclick="return false;">
-                <svg class="logo mr-2" id="logo-navbar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
-                  <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
-                  <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
-                  <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
-                </svg>
-                <strong class="align-middle" contenteditable="true" spellcheck="false">Coinflipper</strong>
-              </a>
-            </nav>
-          </div>
-          
-          <div class="preview-row">
-            <div class="preview-item">
-              <svg class="logo-xl clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
-                <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
-                <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
-                <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
-              </svg>
-              <div class="size-label">Extra Large (251×289)</div>
-            </div>
-            
-            <div class="preview-item">
-              <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                <div>
-                  <svg class="logo-l clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
-                    <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
-                    <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
-                    <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
-                  </svg>
-                  <div class="size-label">Large (87×100)</div>
-                </div>
-                
-                <div>
-                  <svg class="logo-m clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
-                    <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
-                    <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
-                    <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
-                  </svg>
-                  <div class="size-label">Medium (26×30)</div>
-                </div>
-                
-                <div>
-                  <svg class="logo-s clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
-                    <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
-                    <path class="left-seg" fill="#26337A" d="M143.96,97.74s-6.78,10.44-8.76,18.07c0,0-6.77,11.57-11.57,17.79,0,0-49.42,32.18-58.45,45.17,0,0-17.79,5.65-22.31,8.75-4.51,3.11-7.34,8.19-9.31,9.04-1.98.85-33.56,20.33-33.56,20.33V14.72C0,6.59,6.59,0,14.72,0h117.38l2.17,17.9c-6.84,4.12-11.81,10.93-11.81,16.87,0,6.77,6.47,10.03,14.8,7.77l6.7,55.2Z"/>
-                    <path class="right-seg" fill="#FF0000" d="M251,14.38v260.24c0,7.94-6.44,14.38-14.38,14.38H26.21s30.5-27.22,34.17-30.6c3.67-3.39,5.36-.29,7.62,1.69,2.26,1.98,23.16,4.52,27.11,5.08,3.95.57,18.35,3.39,22.87,6.5,4.52,3.1,24.56,1.97,27.95,1.69,3.39-.28,7.91-9.32,9.06-12.14,1.15-2.82-3.31-5.11-2-5.65,1.61-.66,8.54,2.49,14.4-5.65,6.07-8.42,2.26-9.88.57-11.29-1.7-1.41-3.78-3.12,1.97-3.67,6.69-.64,8.75-9.6,9.8-14.12,1.04-4.52-4.43-7.06-6.41-9.6-1.98-2.54,3.39-.56,5.93-8.47,2.54-7.9-3.21-15.99-9.88-19.2-4.89-2.36-32.76-12.7-36.71-13.55-3.95-.85-2.26-3.95-1.69-6.5.56-2.54,10.16-13.83,15.02-21.45,4.85-7.63,10.39-17.51,9.93-28.8-.45-11.3-6.88-15.25-6.88-15.25l-7.56-57.03c8.16-3.81,14.44-11.59,14.44-18.27,0-7.29-7.49-10.5-16.73-7.17-.35.12-.69.26-1.03.4l-2.11-15.95h100.57c7.94,0,14.38,6.44,14.38,14.38Z"/>
-                  </svg>
-                  <div class="size-label">Small (16×18)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="preview-footer mt-4">
-            <button class="btn btn-primary btn-sm" onclick="saveSVG()">
-              <i class="fa-solid fa-download"></i> Save SVG
-            </button>
-          </div>
+
         </div>
       </div>
     </div>
@@ -361,22 +360,22 @@
     const colorLeft = document.getElementById('color-left');
     const colorRight = document.getElementById('color-right');
     const colorBg = document.getElementById('color-bg');
-    
+
     const hexLeft = document.getElementById('hex-left');
     const hexRight = document.getElementById('hex-right');
     const hexBg = document.getElementById('hex-bg');
-    
+
     function isValidHex(hex) {
       return /^#[0-9A-Fa-f]{6}$/.test(hex);
     }
-    
+
     function updateFromPickers() {
       hexLeft.value = colorLeft.value.toUpperCase();
       hexRight.value = colorRight.value.toUpperCase();
       hexBg.value = colorBg.value.toUpperCase();
       applyColors();
     }
-    
+
     function updateFromHex(hexInput, colorPicker) {
       let val = hexInput.value.trim();
       // Auto-add # if missing
@@ -389,22 +388,22 @@
         applyColors();
       }
     }
-    
+
     function applyColors() {
       const left = colorLeft.value;
       const right = colorRight.value;
       const bg = colorBg.value;
-      
+
       document.querySelectorAll('.preview-section .left-seg').forEach(el => el.setAttribute('fill', left));
       document.querySelectorAll('.preview-section .right-seg').forEach(el => el.setAttribute('fill', right));
       document.querySelectorAll('.preview-section .bg-rect').forEach(el => el.setAttribute('fill', bg));
-      
+
       updateFavicon(left, right, bg);
-      
+
       // Persist to localStorage
       localStorage.setItem('currentColors', JSON.stringify({ left, right, bg }));
     }
-    
+
     function updateFavicon(left, right, bg) {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
         <rect fill="${bg}" width="251" height="289" rx="14.6" ry="14.6"/>
@@ -414,7 +413,7 @@
       const encoded = 'data:image/svg+xml,' + encodeURIComponent(svg);
       document.getElementById('favicon').href = encoded;
     }
-    
+
     const presets = {
       'original': { label: 'Coinflipper', left: '#26337A', right: '#FF0000', bg: '#FFFFFF' },
       'pick-a-hit': { label: 'Pick-a-Hit', left: '#8B4513', right: '#D2691E', bg: '#FFFDE7' },
@@ -422,7 +421,7 @@
       'summer-classics': { label: 'Summer Classics', left: '#228B22', right: '#90EE90', bg: '#FFFFFF' },
       'the-untitled': { label: 'The Untitled', left: '#606060', right: '#B0B0B0', bg: '#FFFFFF' }
     };
-    
+
     function applyPreset(name) {
       const p = presets[name];
       colorLeft.value = p.left;
@@ -430,22 +429,22 @@
       colorBg.value = p.bg;
       updateFromPickers();
     }
-    
+
     function resetColors() {
       applyPreset('original');
     }
-    
+
     function swapSegments() {
       const tempColor = colorLeft.value;
       colorLeft.value = colorRight.value;
       colorRight.value = tempColor;
       updateFromPickers();
     }
-    
+
     function randomHex() {
       return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
     }
-    
+
     function surpriseMe() {
       colorLeft.value = randomHex();
       colorRight.value = randomHex();
@@ -460,7 +459,7 @@
       colorBg.value = bgOptions[Math.floor(Math.random() * bgOptions.length)];
       updateFromPickers();
     }
-    
+
     function copyColors(btn) {
       const text = `${colorLeft.value.toUpperCase()} / ${colorRight.value.toUpperCase()} / ${colorBg.value.toUpperCase()}`;
       navigator.clipboard.writeText(text).then(() => {
@@ -470,11 +469,11 @@
         setTimeout(() => { btn.innerHTML = originalHTML; }, 1500);
       });
     }
-    
+
     function importColors() {
       const input = prompt('Paste colors (e.g. "#26337A / #FF0000 / #FFFFFF"):');
       if (!input) return;
-      
+
       const matches = input.match(/#[0-9A-Fa-f]{6}/g);
       if (matches && matches.length >= 3) {
         colorLeft.value = matches[0];
@@ -485,19 +484,19 @@
         alert('Could not find 3 hex colors. Expected format: #RRGGBB / #RRGGBB / #RRGGBB');
       }
     }
-    
+
     function saveSVG() {
       // Clone the XL preview SVG (it has current colors)
       const svg = document.querySelector('.preview-section .logo-xl').cloneNode(true);
-      
+
       // Clean up for export
       svg.removeAttribute('class');
       svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-      
+
       // Serialize to string
       const serializer = new XMLSerializer();
       const svgString = '<?xml version="1.0" encoding="UTF-8"?>\n' + serializer.serializeToString(svg);
-      
+
       // Create download
       const blob = new Blob([svgString], { type: 'image/svg+xml' });
       const url = URL.createObjectURL(blob);
@@ -509,18 +508,18 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
-    
+
     // Swatches (saved custom colors)
     const swatchContainer = document.getElementById('swatch-container');
     let swatches = JSON.parse(localStorage.getItem('logoSwatches') || '[]');
-    
+
     function saveSwatchesToStorage() {
       localStorage.setItem('logoSwatches', JSON.stringify(swatches));
     }
-    
+
     function renderSwatches() {
       swatchContainer.innerHTML = '';
-      
+
       swatches.forEach((swatch, index) => {
         const item = document.createElement('div');
         item.className = 'preset-item has-delete';
@@ -533,7 +532,7 @@
             updateFromPickers();
           }
         };
-        
+
         const svg = templateSvg.cloneNode(true);
         svg.classList.remove('logo-xl', 'clickable');
         svg.removeAttribute('onclick');
@@ -541,7 +540,7 @@
         svg.querySelector('.left-seg').setAttribute('fill', swatch.left);
         svg.querySelector('.right-seg').setAttribute('fill', swatch.right);
         svg.querySelector('.bg-rect').setAttribute('fill', swatch.bg);
-        
+
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
@@ -552,12 +551,12 @@
           saveSwatchesToStorage();
           renderSwatches();
         };
-        
+
         item.appendChild(svg);
         item.appendChild(deleteBtn);
         swatchContainer.appendChild(item);
       });
-      
+
       // Add the "add swatch" button at the end
       const addBtn = document.createElement('button');
       addBtn.className = 'add-swatch-btn';
@@ -566,7 +565,7 @@
       addBtn.onclick = saveSwatch;
       swatchContainer.appendChild(addBtn);
     }
-    
+
     function saveSwatch() {
       swatches.push({
 		label: `${colorLeft.value.toUpperCase()} / ${colorRight.value.toUpperCase()} / ${colorBg.value.toUpperCase()}`,
@@ -577,28 +576,28 @@
       saveSwatchesToStorage();
       renderSwatches();
     }
-    
+
     // Listen for color picker changes
     colorLeft.addEventListener('input', updateFromPickers);
     colorRight.addEventListener('input', updateFromPickers);
     colorBg.addEventListener('input', updateFromPickers);
-    
+
     // Listen for hex input changes
     hexLeft.addEventListener('input', () => updateFromHex(hexLeft, colorLeft));
     hexRight.addEventListener('input', () => updateFromHex(hexRight, colorRight));
     hexBg.addEventListener('input', () => updateFromHex(hexBg, colorBg));
-    
+
     // Build preset grid
     const presetContainer = document.getElementById('preset-container');
     const templateSvg = document.querySelector('.logo-xl');
-    
+
     Object.keys(presets).forEach(name => {
       const p = presets[name];
       const item = document.createElement('div');
       item.className = 'preset-item';
       item.title = p.label;
       item.onclick = () => applyPreset(name);
-      
+
       const svg = templateSvg.cloneNode(true);
       svg.classList.remove('logo-xl', 'clickable');
       svg.removeAttribute('onclick');
@@ -606,14 +605,14 @@
       svg.querySelector('.left-seg').setAttribute('fill', p.left);
       svg.querySelector('.right-seg').setAttribute('fill', p.right);
       svg.querySelector('.bg-rect').setAttribute('fill', p.bg);
-      
+
       item.appendChild(svg);
       presetContainer.appendChild(item);
     });
-    
+
     // Initial render of saved swatches (after templateSvg is defined)
     renderSwatches();
-    
+
     // Load persisted colors
     const savedColors = localStorage.getItem('currentColors');
     if (savedColors) {
