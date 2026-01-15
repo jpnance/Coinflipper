@@ -95,6 +95,7 @@
     .preview-row {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
     }
@@ -107,6 +108,19 @@
       font-size: 0.75rem;
       color: #6c757d;
       margin-top: 0.5rem;
+    }
+
+    .smaller-logos {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (min-width: 768px) {
+      .smaller-logos {
+        flex-direction: column;
+      }
     }
 
     .preview-section svg.clickable {
@@ -125,11 +139,15 @@
 
     /* Navbar preview */
     .navbar-demo {
-      margin-top: 0.5rem;
+      margin: -1.5rem -1.5rem 0 -1.5rem;
+    }
+    .navbar-demo .navbar {
+      border-radius: 0;
     }
 
     .preview-footer {
       display: flex;
+      justify-content: center;
       gap: 0.75rem;
       padding-top: 1rem;
       border-top: 1px solid #dee2e6;
@@ -265,7 +283,7 @@
             </div>
 
             <div class="preview-item">
-              <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+              <div class="smaller-logos">
                 <div>
                   <svg class="logo-l clickable" onclick="saveSVG()" title="Click to download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 289">
                     <rect class="bg-rect" width="251" height="289" rx="14.6" ry="14.6" fill="#FFFFFF"/>
