@@ -146,12 +146,22 @@
   }
 
   .preview-footer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     padding-top: 1rem;
     border-top: 1px solid #dee2e6;
   }
+  @media (min-width: 576px) {
+    .preview-footer {
+      grid-template-columns: repeat(4, auto);
+    }
+  }
+  .preview-footer .btn span {
+	white-space: nowrap;
+  }
+
   .navbar-demo .logo {
     height: 30px;
     width: auto;
@@ -323,8 +333,17 @@
           </div>
 
           <div class="preview-footer mt-4">
-            <button class="btn btn-primary btn-sm" onclick="saveSVG()">
-              <i class="fa-solid fa-download"></i> Save SVG
+            <button class="btn btn-primary" onclick="saveSVG()">
+              <i class="fa-solid fa-download"></i> <span>Save SVG</span>
+            </button>
+            <button class="btn btn-outline-primary" onclick="copySVG(this)">
+              <i class="fa-solid fa-copy"></i> <span>Copy SVG</span>
+            </button>
+            <button class="btn btn-outline-primary" onclick="savePNG()">
+              <i class="fa-solid fa-download"></i> <span>Save PNG</span>
+            </button>
+            <button class="btn btn-outline-primary" onclick="copyPNG(this)">
+              <i class="fa-solid fa-copy"></i> <span>Copy PNG</span>
             </button>
           </div>
         </div>
@@ -533,6 +552,73 @@
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  }
+
+  function copySVG(btn) {
+    const svg = document.querySelector('.preview-section .logo-xl').cloneNode(true);
+    svg.removeAttribute('class');
+    svg.removeAttribute('onclick');
+    svg.removeAttribute('title');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+
+    const svgString = new XMLSerializer().serializeToString(svg);
+    navigator.clipboard.writeText(svgString).then(() => {
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+      setTimeout(() => { btn.innerHTML = originalHTML; }, 1500);
+    });
+  }
+
+  function svgToPngBlob(callback) {
+    const svg = document.querySelector('.preview-section .logo-xl').cloneNode(true);
+    svg.removeAttribute('class');
+    svg.removeAttribute('onclick');
+    svg.removeAttribute('title');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const svgUrl = 'data:image/svg+xml,' + encodeURIComponent(svgData);
+
+    const img = new Image();
+    img.onload = function() {
+      const width = 250;
+      const height = Math.round(250 * (289 / 251));
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+      canvas.toBlob(callback, 'image/png');
+    };
+    img.src = svgUrl;
+  }
+
+  function savePNG() {
+    svgToPngBlob(function(blob) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'coinflipper-logo.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  function copyPNG(btn) {
+    svgToPngBlob(async function(blob) {
+      try {
+        await navigator.clipboard.write([
+          new ClipboardItem({ 'image/png': blob })
+        ]);
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+        setTimeout(() => { btn.innerHTML = originalHTML; }, 1500);
+      } catch (err) {
+        alert('Could not copy to clipboard. Your browser may not support this feature.');
+      }
+    });
   }
 
   // Swatches (saved custom colors)
