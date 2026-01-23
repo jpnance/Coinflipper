@@ -1,0 +1,11 @@
+{
+  "slug": "coinflipper",
+  "domain": "coinflipper.org",
+  "type": "static",
+
+  "#": "Directory within the repo to serve",
+  "root": "public",
+
+  "#": "For auto-deploy — use 'true' for no-op, or a build command if needed",
+  "deploy_cmd": "true"
+}
